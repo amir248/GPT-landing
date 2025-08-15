@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Создание лендинга и сайтов — Амир</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    scroll-behavior: smooth;
+  }
+
+  /* Header */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #1e90ff;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 1.5em;
+  }
+  .menu-toggle {
+    font-size: 1.5em;
+    cursor: pointer;
+    display: none;
+  }
+  nav {
+    display: flex;
+    gap: 20px;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    nav {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: #1e90ff;
+      flex-direction: column;
+      width: 200px;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      padding: 10px 0;
+    }
+    nav.show { transform: translateX(0); }
+    nav a { padding: 10px 20px; }
+  }
+
+  section {
+    max-width: 1000px;
+    margin: 100px auto 40px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+  }
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  h2 { color: #1e90ff; }
+  ul { list-style: none; padding-left: 0; }
+  ul li {
+    margin: 10px 0;
+    padding-left: 25px;
+    position: relative;
+  }
+  ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #1e90ff;
+  }
+
+  .cta-button {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 15px 30px;
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  .cta-button:hover { background: #218838; }
+
+  /* Parallax фотографии */
+  .images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+  }
+  .images img {
+    width: calc(33% - 10px);
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  .images img:hover { transform: scale(1.05); }
+
+  footer { text-align: center; padding: 20px; color: #555; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Амир</h1>
+  <div class="menu-toggle">&#9776;</div>
+  <nav>
+    <a href="#services">Услуги</a>
+    <a href="#why">Почему со мной</a>
+    <a href="#portfolio">Примеры работ</a>
+    <a href="#contact">Контакты</a>
+  </nav>
+</header>
+
+<section id="services">
+  <h2>Что я предлагаю</h2>
+  <ul>
+    <li>Создание лендинга и сайта под ключ</li>
+    <li>Доработка и модификация HTML, CSS, JS</li>
+    <li>SEO-оптимизация для продвижения в поисковых системах</li>
+    <li>Запуск рекламных кампаний (Яндекс, Google, соцсети)</li>
+    <li>Установка и настройка серверов Debian/Ubuntu с NGINX</li>
+    <li>Поддержка и консультации после запуска сайта</li>
+  </ul>
+  <a class="cta-button" href="https://wa.me/79528885656" target="_blank">Связаться через WhatsApp</a>
+</section>
+
+<section id="why">
+  <h2>Почему со мной выгодно работать</h2>
+  <ul>
+    <li>Комплексный подход: сайт + реклама + поддержка</li>
+    <li>Быстро и качественно: лендинг готов за несколько дней</li>
+    <li>Результат, а не просто сайт: конверсия и заявки</li>
+    <li>Прямой контакт со специалистом — всё решается напрямую</li>
+  </ul>
+</section>
+
+<section id="portfolio">
+  <h2>Примеры работ</h2>
+  <div class="images">
+    <img src="https://images.unsplash.com/photo-1602524810976-0a56e5914340?crop=entropy&cs=tinysrgb&fit=crop&h=200&w=300" alt="Проект 1">
+    <img src="https://images.unsplash.com/photo-1590608897129-79c45d0d1e8f?crop=entropy&cs=tinysrgb&fit=crop&h=200&w=300" alt="Проект 2">
+    <img src="https://images.unsplash.com/photo-1605902711622-cfb43c4430d8?crop=entropy&cs=tinysrgb&fit=crop&h=200&w=300" alt="Проект 3">
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Контакты</h2>
+  <p>Связаться со мной можно через WhatsApp:</p>
+  <a class="cta-button" href="https://wa.me/79528885656" target="_blank">+7 952 888 56 56</a>
+</section>
+
+<footer>
+  © 2025 Амир — Профессиональное создание лендингов и сайтов.  
+  WhatsApp: <a href="https://wa.me/79528885656" target="_blank">+7 952 888 56 56</a>
+</footer>
+
+<script>
+  // Выдвижное меню
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav');
+  menuToggle.addEventListener('click', () => { nav.classList.toggle('show'); });
+
+  // Intersection Observer для анимации секций
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  sections.forEach(section => observer.observe(section));
+
+  // Плавная прокрутка при клике на меню
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      target.scrollIntoView({ behavior: 'smooth' });
+      if(nav.classList.contains('show')) nav.classList.remove('show');
+    });
+  });
+
+  // Простейший parallax для фотографий
+  window.addEventListener('scroll', () => {
+    const images = document.querySelectorAll('.images img');
+    images.forEach((img, i) => {
+      img.style.transform = `translateY(${window.scrollY * 0.05 * (i+1)}px) scale(1.05)`;
+    });
+  });
+</script>
+
+</body>
+</html>
